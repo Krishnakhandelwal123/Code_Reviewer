@@ -1,0 +1,26 @@
+# Dependencies
+# Ignore node_modules folders in the root, frontend, and backend
+**/node_modules
+
+# Environment Variables
+# Ignore all .env files in any directory
+**/.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Build output
+/frontend/dist
+
+# IDE and OS files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store 
