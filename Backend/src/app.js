@@ -7,6 +7,8 @@ const path = require('path');
 
 const app = express();
 
+const __dirname = path.resolve();
+
 app.use(cookieParser());
 app.use(express.json());
 
@@ -22,19 +24,14 @@ app.use(
 app.use('/api/ai', aiRoutes);
 app.use("/api/auth", authRoutes);
 
-// Serve frontend static files in production
 if (process.env.NODE_ENV === "production") {
-  const frontendPath = path.join(__dirname, '..', 'frontend', 'dist');
-  console.log('✅ Serving frontend from:', frontendPath);
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-  app.use(express.static(path.join(__dirname, '..', 'frontend', 'dist')));
-
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(frontendPath, 'index.html'));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
   });
 }
 
-// Default route
 app.get('/', (req, res) => {
   res.send('Hello World');
 });
