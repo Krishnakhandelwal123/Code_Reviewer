@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import '../index.css';
-import { useAuthStore } from "../store/AuthStore";
+import { useAuthStore } from "../Store/AuthStore";
 import { Loader2 } from 'lucide-react';
 import { Link } from "react-router-dom";
 import { RevealBento } from "../components/Anime";
