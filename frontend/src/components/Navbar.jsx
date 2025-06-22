@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from "framer-motion";
 import { FiAlertCircle, FiMenu, FiX } from "react-icons/fi";
-import { useAuthStore } from '../store/AuthStore.js';
+import { useAuthStore } from '../Store/AuthStore.js';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
