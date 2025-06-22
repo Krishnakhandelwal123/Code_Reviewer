@@ -4,7 +4,7 @@ import { Toaster } from "react-hot-toast";
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Initial from './pages/Initial';
-import { useAuthStore } from "./store/AuthStore";
+import { useAuthStore } from "./Store/AuthStore";
 import { useEffect } from 'react';
 import { Loader } from "lucide-react";
 import { TextParallaxContentExample } from './components/Parallax';
