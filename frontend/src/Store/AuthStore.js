@@ -8,9 +8,6 @@ export const useAuthStore = create((set, get) => ({
   isSigningUp: false,
   isLoggingIn: false, 
   isCheckingAuth: true,
-  isSendingPasswordReset: false,
-  isResettingPassword: false,
-
 
   checkAuth: async () => {
     try {
@@ -82,32 +79,6 @@ export const useAuthStore = create((set, get) => ({
       toast.error(message);
     } finally {
       set({ isLoggingIn: false });
-    }
-  },
-
-  forgotPassword: async (email) => {
-    set({ isSendingPasswordReset: true });
-    try {
-      const res = await axiosInstance.post("/auth/forgot-password", { email });
-      toast.success(res.data.message);
-    } catch (error) {
-      toast.error(error.response.data.message || "Failed to send reset link.");
-    } finally {
-      set({ isSendingPasswordReset: false });
-    }
-  },
-
-  resetPassword: async (token, password) => {
-    set({ isResettingPassword: true });
-    try {
-      const res = await axiosInstance.post(`/auth/reset-password/${token}`, { password });
-      set({ authUser: res.data });
-      return true; // Indicate success
-    } catch (error) {
-      toast.error(error.response.data.message || "Failed to reset password.");
-      return false; // Indicate failure
-    } finally {
-      set({ isResettingPassword: false });
     }
   },
 
