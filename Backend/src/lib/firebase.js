@@ -1,4 +1,4 @@
-const admin = require('firebase-admin');
+import admin from 'firebase-admin';
 
 try {
   const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
@@ -10,5 +10,5 @@ try {
 } catch (error) {
   console.error("Firebase Admin SDK initialization error:", error);
 }
- 
-module.exports = admin; 
+
+export default admin; 

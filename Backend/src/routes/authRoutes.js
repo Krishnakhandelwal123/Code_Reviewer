@@ -1,6 +1,6 @@
-const express = require('express');
-const { signup, login, logout, checkAuth, googleLogin } = require('../controllers/authController.js');
-const { protectRoute } = require('../middlewares/authMiddleware.js');
+import express from 'express';
+import { signup, login, logout, checkAuth, googleLogin } from '../controllers/authController.js';
+import { protectRoute } from '../middlewares/authMiddleware.js';
 
 const router = express.Router();
 
@@ -11,5 +11,5 @@ router.post("/google", googleLogin);
 
 router.get("/check", protectRoute, checkAuth);
 
-module.exports = router;
+export default router;
   

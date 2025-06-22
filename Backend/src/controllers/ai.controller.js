@@ -1,4 +1,4 @@
-const aiService = require('../services/ai.service');
+import aiService from '../services/ai.service.js';
 
 async function getReview(req, res) {
     const code = req.body.code;
@@ -12,4 +12,4 @@ async function getReview(req, res) {
    res.send(response);
 }
 
-module.exports = { getReview };
+export { getReview };

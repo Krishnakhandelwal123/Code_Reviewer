@@ -1,7 +1,7 @@
-const { generateToken } = require("../lib/utils.js");
-const User = require("../models/userModel.js");
-const bcrypt = require("bcryptjs");
-const admin = require('../lib/firebase.js');
+import { generateToken } from "../lib/utils.js";
+import User from "../models/userModel.js";
+import bcrypt from "bcryptjs";
+import admin from '../lib/firebase.js';
 
 const signup = async (req, res) => {
   const { name, email, password } = req.body;
@@ -123,10 +123,10 @@ const checkAuth = (req, res) => {
   }
 };
 
-module.exports = {
+export {
   signup,
   login,
-  googleLogin,
   logout,
   checkAuth,
+  googleLogin,
 };

@@ -1,13 +1,15 @@
-const express = require('express');
-const cors = require('cors');
-const aiRoutes = require('./routes/ai.routes');
-const cookieParser = require('cookie-parser');
-const authRoutes = require('./routes/authRoutes.js');
-const path = require('path');
+import express from 'express';
+import cors from 'cors';
+import aiRoutes from './routes/ai.routes.js';
+import cookieParser from 'cookie-parser';
+import authRoutes from './routes/authRoutes.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
 
-const __dirname = path.resolve();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(cookieParser());
 app.use(express.json());
@@ -36,4 +38,4 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-module.exports = app;
+export default app;
