@@ -14,3 +14,4 @@ router.post("/reset-password/:token", resetPassword);
 router.get("/check", protectRoute, checkAuth);
 
 module.exports = router;
+ 

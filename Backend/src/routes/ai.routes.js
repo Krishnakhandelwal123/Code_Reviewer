@@ -5,6 +5,6 @@ const router=express.Router();
 
 router.post('/getreview',aiController.getReview);
  
- 
+  
 
 module.exports=router;
