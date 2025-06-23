@@ -7,7 +7,7 @@ const Contact = () => {
         <div className="min-h-screen flex flex-col lg:flex-row bg-white">
             {/* Image Section */}
             <div className="w-full lg:w-1/2 h-[40vh] sm:h-[50vh] lg:h-auto flex items-center justify-center">
-                 <img className='h-[300px] sm:h-[400px] lg:h-[550px] mx-auto mt-8 sm:mt-16 lg:mt-28' src="../public/contact.png" alt="Contact" />
+                 <img className='h-[300px] sm:h-[400px] lg:h-[550px] mx-auto mt-8 sm:mt-16 lg:mt-28' src="/contact.png" alt="Contact" />
             </div>
             
             {/* Content Section */}
