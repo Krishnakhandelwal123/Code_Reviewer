@@ -26,8 +26,8 @@ const handleclick = async (e) => {
     }, [code]);
 
     return (
-        <div className='bg-gray-900 flex h-screen p-6 gap-4'>
-            <div className='left w-1/2 bg-black rounded-2xl relative flex flex-col'>
+        <div className='bg-gray-900 flex flex-col md:flex-row h-screen p-2 md:p-6 gap-2 md:gap-4'>
+            <div className='left w-full md:w-1/2 bg-black rounded-2xl relative flex flex-col mb-2 md:mb-0'>
                 <div className="code flex-1 w-full m-0 p-4">
                     <Editor
                         value={code}
@@ -38,7 +38,7 @@ const handleclick = async (e) => {
                         style={{ minHeight: '200px', background: 'transparent' }}
                     />
                 </div>
-                <div onClick={handleclick} className="bg-white p-3 mb-3 mr-3 cursor-pointer px-10 rounded-2xl text-black inline absolute bottom-0 right-0 select-none">
+                <div onClick={handleclick} className="bg-white p-3 mb-3 mr-3 cursor-pointer px-6 md:px-10 rounded-2xl text-black inline absolute bottom-0 right-0 select-none text-sm md:text-base">
                     {isreviewing?( <span className="flex items-center justify-center gap-2">
                   <Loader2 className="h-5 w-5 animate-spin" />
                   Reviewing...
@@ -47,7 +47,7 @@ const handleclick = async (e) => {
                 )}
                 </div>
             </div>
-            <div className='right w-1/2 overflow-auto bg-gray-800 p-[1.5rem] text-white rounded-2xl'><Markdown
+            <div className='right w-full md:w-1/2 overflow-auto bg-gray-800 p-4 md:p-[1.5rem] text-white rounded-2xl min-h-[200px]'><Markdown
             rehypePlugins={[rehypeHighlight]}
             >
                 {reviews}
